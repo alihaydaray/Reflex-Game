@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>health</title>
+<h1 class="W">W</h1>
+<h1 class="a">A</h1>
+<h1 class="s">S</h1>
+<h1 class="d">D</h1>
+
+ <audio src="2doyunmuzıg3.mp3" loop ></audio> 
+
+  <style>
+     body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 1s ease; /* 1 saniyede yumuşak geçiş */
+    }
+
+
+
+    .W{
+      position: fixed;
+      top: 140px;
+      left: 445px;
+      color: black;
+      font-size: 60px;
+      z-index: 1;
+    }
+    
+    .a{
+      position: fixed;
+      top: 230px;
+      left: 350px;
+      color: black;
+      font-size: 70px;
+      z-index: 1;
+    }
+
+    .s{
+      position: fixed;
+      top: 230px;
+      left: 555px;
+      color: black;
+      font-size: 70px;
+      z-index: 1;
+    }
+     
+    .d{
+      position: fixed;
+      top: 230px;
+      left: 453px;
+      color: black;
+      font-size: 70px;
+      z-index: 1;
+    }
+
+    .health_box{
+      width: 300px;
+      height: 36px;
+      border: 8px solid black;
+      background-color: grey;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+
+    }
+    .health_bar{
+      width: 100%;
+      height: 100%;
+      background-color: red;
+      transition: width 0.7s;
+    }
+    .health_bar2{
+       width: 289px;
+      height: 27px;
+      border: 6px solid darkred;
+      position: fixed;
+      bottom: 26px;
+      left: 28px;
+    }
+    .kare1{
+      width:80px; 
+      height: 80px;
+      background-color: orange;
+      border: solid 8px black;
+      position: relative;
+      top: -33px;
+      left: 257px; 
+      
+    }
+
+    .kare2{
+       width: 80px; 
+      height: 80px;
+      background-color: orange;
+      border: solid 8px black;
+      position: absolute;
+      top: -8px;
+      left: 93px; 
+    }
+
+    .kare3{ width: 80px; 
+      height: 80px;
+      background-color: orange;
+      border: solid 8px black;
+      position: absolute;
+      top: -8px;
+      left: 193px; }
+
+    .kare4{
+       width: 80px; 
+      height: 80px;
+      background-color: rgb(255, 170, 1);
+      border: solid 8px black;
+      position: absolute;
+      top: -110px;
+      left: 93px; 
+    }
+
+    .kare5{
+       width: 80px; 
+      height: 80px;
+      background-color: orange;
+      border: solid 8px black;
+      position: relative;
+      top: -33px;
+      left: -440px; 
+    }
+    .kare6{
+       width: 80px; 
+      height: 80px;
+      background-color: orange;
+      border: solid 8px black;
+      position: absolute;
+      top: -8px;
+      left: 93px; 
+    }
+    .kare7{
+       width: 80px; 
+      height: 80px;
+      background-color: orange;
+      border: solid 8px black;
+      position: absolute;
+      top: -8px;
+      left: 193px; 
+    }
+    .kare8{
+       width: 80px; 
+      height: 80px;
+      background-color: orange;
+      border: solid 8px black;
+      position: absolute;
+      top: -110px;
+      left: 93px; 
+    }
+
+    .ok1{
+      width: 17px; 
+      height: 45px;
+      background-color: black;
+     
+      position: absolute;
+      top: 200px; 
+      left: 1070px;
+    }
+
+    .ok2{
+      width: 17px; 
+      height: 45px;
+      background-color: black;
+     
+      position: absolute;
+      top: 84px; 
+      left: 0px;
+
+    }
+
+    .ok3{
+      width: 45px; 
+      height: 17px;
+      background-color: black;
+     
+      position: absolute;
+      top: 110px; 
+      left: -110px;
+
+    }
+
+    .ok4{
+      width: 45px; 
+      height: 17px;
+      background-color: black;
+     
+      position: absolute;
+      top: 110px; 
+      left: 75px;
+    }
+     .üçgen1{
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 30px solid rgb(0, 0, 0);
+      position: absolute;
+      top: 105px;
+      left: 110px;
+
+      transform: rotate(90deg); 
+      transform-origin: center;  
+    }
+
+     .üçgen2{
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 30px solid rgb(0, 0, 0);
+      position: absolute;
+      top: -20px;
+      left: -5px; 
+    }
+
+     .üçgen3{
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 30px solid rgb(0, 0, 0);
+      position: absolute;
+      top: 120px;
+      left: -5px; 
+
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+
+     .üçgen4{
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 30px solid rgb(0, 0, 0);
+      position: absolute;
+      top: 105px;
+      left: -130px;
+      
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+
+    .highlight {
+      background-color: yellow;
+      transition: background-color 0.3s;
+    }
+
+    
+   
+  </style>
+  </head>
+
+  <button id="startBtn">START</button>
+<style>
+    #startBtn {
+      width: 200px;
+      height: 80px;
+        position: fixed;
+        top: 400px;
+        left: 673px;
+        font-size: 55px;
+        background-color: lightgrey;
+    }
+</style>
+<body>
+ 
+<div id="gameOver" style="display:none; position:fixed; top: 230px;
+        left: 627px; font-size:60px; text-align:center;">
+    <div> <h4>Game Over</h4></div>
+    <button id="restartBtn" ><h1>TRY AGAİN</h1></button>
+
+<style>
+  #restartBtn {
+    width: 200px;
+      height: 80px;
+        position: fixed;
+        top: 400px;
+        left: 673px;
+        font-size: 17px;
+        background-color: lightgrey;
+  }
+
+</style>
+</div>
+
+ <div class="health_box">
+   <div class="health_bar"></div>
+   <div class="health_bar2"></div>
+   </div>
+    <div class="kare1">
+      <div class="kare2"></div>
+    <div class="kare3"></div>
+    <div class="kare4"></div>
+     </div>
+    <div class="ok1">
+      <div class="ok2"></div>
+    <div class="ok3"></div> 
+    <div class="ok4"></div>
+    <div class="üçgen1"></div>
+    <div class="üçgen2"></div>
+    <div class="üçgen3"></div>
+    <div class="üçgen4"></div>
+    </div>
+    <div class="kare5">
+       <div class="kare6"></div>
+    <div class="kare7"></div>
+    <div class="kare8"></div>
+    </div>
+<script>
+// =============== OYUN AYARLARI ===============
+const KEY_MAP = {
+  kare1: "ArrowLeft",
+  kare2: "ArrowDown",
+  kare3: "ArrowRight",
+  kare4: "ArrowUp",
+  kare5: "a",
+  kare6: "s",
+  kare7: "d",
+  kare8: "w",
+};
+
+const BG_COLORS = [
+  "lightyellow",
+  "lightgoldenrodyellow",
+  "lightgray",
+  "lightcyan",
+  "lightpink",
+  "lightsalmon",
+  "lightblue",
+  "lightgreen",
+  "lightcoral",
+  "lightseagreen",
+  "lightskyblue",
+  "lightsteelblue",
+];
+
+const BG_INTERVAL_MS = 1000; // renk değiştirme aralığı
+const BG_TRANSITION_MS = 800; // yumuşak geçiş süresi
+const FLASH_MS = 200; // kırmızı flaş süresi
+const MISS_PENALTY = 25; // kaçırınca düşen can
+const TIMEOUT_MS = 1000; // 1 saniye içinde doğru tuşa basma süresi
+
+// =============== DURUM DEĞİŞKENLERİ ===============
+let health = 100;
+let score = 0;
+let highScore = 0;
+let gameStarted = false;
+let currentKare = null;
+let lastCorrectTime = 0;
+let timerInterval = null;
+let bgIndex = 0;
+let flashTimeoutId = null;
+let bgIntervalId = null;
+
+// =============== ELEMENTLER ===============
+let healthBar;
+let scoreDisplay;
+let kareler = [];
+
+// =============== YARDIMCI FONKSİYONLAR ===============
+function $(sel) {
+  return document.querySelector(sel);
+}
+
+function setupScoreDisplay() {
+  scoreDisplay = document.createElement("div");
+  scoreDisplay.style.position = "fixed";
+  scoreDisplay.style.top = "20px";
+  scoreDisplay.style.left = "20px";
+  scoreDisplay.style.fontSize = "32px";
+  scoreDisplay.style.backgroundColor = "rgba(0,0,0,0.5)";
+  scoreDisplay.style.color = "white";
+  scoreDisplay.style.padding = "5px 10px";
+  scoreDisplay.style.borderRadius = "8px";
+  scoreDisplay.style.whiteSpace = "nowrap";
+  document.body.appendChild(scoreDisplay);
+  updateScoreUI();
+}
+
+function updateScoreUI() {
+  scoreDisplay.innerText = `Score: ${score} | High Score: ${highScore}`;
+}
+
+function loadHighScore() {
+  highScore = parseInt(localStorage.getItem("highScore") || "0", 10);
+}
+
+function saveHighScore() {
+  localStorage.setItem("highScore", String(highScore));
+}
+
+function randomParla() {
+  if (currentKare) currentKare.classList.remove("highlight");
+
+  let index;
+  do {
+    index = Math.floor(Math.random() * kareler.length);
+  } while (kareler[index] === currentKare);
+
+  currentKare = kareler[index];
+  currentKare.classList.add("highlight");
+  lastCorrectTime = Date.now();
+}
+
+function checkGameOver() {
+  if (health <= 0) {
+    gameStarted = false;
+    clearInterval(timerInterval);
+    $("#gameOver").style.display = "block";
+    if (score > highScore) {
+      highScore = score;
+      saveHighScore();
+    }
+    updateScoreUI();
+  }
+}
+
+// Süre dolarsa can düşür
+function startTimer() {
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    if (!gameStarted) return;
+    if (Date.now() - lastCorrectTime > TIMEOUT_MS) {
+      applyPenalty();
+      lastCorrectTime = Date.now();
+    }
+  }, 100);
+}
+
+function applyPenalty() {
+  health -= MISS_PENALTY;
+  if (health < 0) health = 0;
+  healthBar.style.width = health + "%";
+  flashRed();
+  checkGameOver();
+}
+
+// =============== FLASHRED ARKA PLAN PARLAMASI ===============
+function flashRed() {
+  const originalColor = document.body.style.backgroundColor || BG_COLORS[bgIndex];
+
+  // Hızlı bir şekilde kırmızıya geç
+  document.body.style.transition = `background-color ${FLASH_MS / 2}ms ease`;
+  document.body.style.backgroundColor = "red";
+
+  setTimeout(() => {
+    // Orijinal rengi geri ver ve geçiş süresini normal yap
+    document.body.style.backgroundColor = originalColor;
+    document.body.style.transition = `background-color ${BG_TRANSITION_MS}ms ease`;
+  }, FLASH_MS);
+}
+
+// =============== ARKA PLAN RENK DÖNGÜSÜ ===============
+function setupBackgroundCycler() {
+  document.body.style.transition = `background-color ${BG_TRANSITION_MS}ms ease`;
+  document.body.style.backgroundColor = BG_COLORS[bgIndex];
+
+  bgIntervalId = setInterval(changeBackground, BG_INTERVAL_MS);
+}
+
+function changeBackground() {
+  bgIndex = (bgIndex + 1) % BG_COLORS.length;
+  document.body.style.backgroundColor = BG_COLORS[bgIndex];
+}
+
+// =============== OYUN GİRİŞ KONTROLLERİ ===============
+function onKeyDown(e) {
+  if (!gameStarted || !currentKare) return;
+
+  const key = e.key;
+  const kareClass = currentKare.classList[0];
+  const correctKey = KEY_MAP[kareClass];
+
+  if (key === correctKey) {
+    lastCorrectTime = Date.now();
+    score += 1;
+
+    if (score > highScore) {
+      highScore = score;
+      saveHighScore();
+    }
+    updateScoreUI();
+    randomParla();
+  } else if (Object.values(KEY_MAP).includes(key)) {
+    applyPenalty();
+  }
+}
+
+// =============== OYUNU BAŞLAT / YENİDEN BAŞLAT ===============
+function startGame() {
+  gameStarted = true;
+  score = 0;
+  health = 100;
+  healthBar.style.width = health + "%";
+  updateScoreUI();
+  randomParla();
+  startTimer();
+  $("#startBtn").style.display = "none";
+}
+
+function restartGame() {
+  health = 100;
+  score = 0;
+  healthBar.style.width = health + "%";
+  $("#gameOver").style.display = "none";
+  updateScoreUI();
+  gameStarted = true;
+  randomParla();
+  startTimer();
+}
+
+// =============== BAŞLANGIÇ KURULUMU ===============
+window.addEventListener("DOMContentLoaded", () => {
+  healthBar = $(".health_bar");
+  kareler = [
+    $(".kare1"),
+    $(".kare2"),
+    $(".kare3"),
+    $(".kare4"),
+    $(".kare5"),
+    $(".kare6"),
+    $(".kare7"),
+    $(".kare8"),
+  ].filter(Boolean);
+
+  loadHighScore();
+  setupScoreDisplay();
+  setupBackgroundCycler();
+
+  document.addEventListener("keydown", onKeyDown);
+  $("#startBtn")?.addEventListener("click", startGame);
+  $("#restartBtn")?.addEventListener("click", restartGame);
+});
+
+function startGame() {
+  gameStarted = true;
+  score = 0;
+  health = 100;
+  healthBar.style.width = health + "%";
+  updateScoreUI();
+  randomParla();
+  startTimer();
+  $("#startBtn").style.display = "none";
+
+  // Müzik çalma
+  const music = document.querySelector("audio");
+  music.play().catch(err => console.log("Ses çalamadı:", err));
+}
+
+
+</script>
+</body>
+</html>
