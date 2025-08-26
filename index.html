@@ -5,18 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>health</title>
-<h1 class="W">W</h1>
-<h1 class="a">A</h1>
-<h1 class="s">S</h1>
-<h1 class="d">D</h1>
 
+
+<meta name="description" content="This is a reflex game, and your brain will focus on eight different places in this game. You will try to earn points by pressing the yellow square. You will have exactly 100 lives, and you will lose 25 lives for every square you press incorrectly. If you don't press anything for one second, you will lose 25 lives, so you will lose a total of four hearts.">
+
+  
  <audio src="2doyunmuzıg3.mp3" loop ></audio> 
-
-<meta name="description" content=" This is a reflex game, and your brain will focus on eight different places in this game. You will try to earn points by pressing the yellow square. You will have exactly 100 lives, and you will lose 25 lives for every square you press incorrectly. If you don't press anything for one second, you will lose 25 lives, so you will lose a total of four hearts..">
 
   <link rel="icon" href="ilk sitem logo.png" type="image/png">
 
-  
+
   <style>
      body {
       margin: 0;
@@ -30,36 +28,36 @@
 
 
     .W{
-      position: fixed;
-      top: 140px;
-      left: 445px;
+      position: relative;
+      top: -19vh;
+      left: 7vw;
       color: black;
       font-size: 60px;
       z-index: 1;
     }
     
     .a{
-      position: fixed;
-      top: 230px;
-      left: 350px;
+      position: absolute;
+      top: -7vh;
+      left: 1vw;
       color: black;
       font-size: 70px;
       z-index: 1;
     }
 
     .s{
-      position: fixed;
-      top: 230px;
-      left: 453px;
+      position: absolute;
+      top: -7vh;
+      left: 8vw;
       color: black;
       font-size: 70px;
       z-index: 1;
     }
      
     .d{
-      position: fixed;
-      top: 230px;
-      left: 555px;
+      position: absolute;
+      top: -6.5vh;
+      left: 14vw;
       color: black;
       font-size: 70px;
       z-index: 1;
@@ -134,8 +132,8 @@
       background-color: orange;
       border: solid 8px black;
       position: relative;
-      top: -33px;
-      left: -440px; 
+      top: -5vh;
+      left: -30vw; 
     }
     .kare6{
        width: 80px; 
@@ -171,8 +169,8 @@
       background-color: black;
      
       position: absolute;
-      top: 200px; 
-      left: 1070px;
+      top: -11vh; 
+      left: 8.8vw;
     }
 
     .ok2{
@@ -281,8 +279,8 @@
         background-color: lightgrey;
     }
 </style>
-<body>
- 
+
+
 <div id="gameOver" style="display:none; position:fixed; top: 100px;
         left: 627px; font-size:60px; text-align:center;">
     <div> <h4>Game Over</h4></div>
@@ -293,13 +291,16 @@
     width: 200px;
       height: 80px;
         position: fixed;
-        top: 270px;
+        top: 300px;
         left: 673px;
         font-size: 17px;
         background-color: lightgrey;
   }
 
 </style>
+<body>
+ 
+
 </div>
 
  <div class="health_box">
@@ -310,9 +311,9 @@
       <div class="kare2"></div>
     <div class="kare3"></div>
     <div class="kare4"></div>
-     </div>
+   
     <div class="ok1">
-      <div class="ok2"></div>
+       <div class="ok2"></div>
     <div class="ok3"></div> 
     <div class="ok4"></div>
     <div class="üçgen1"></div>
@@ -320,10 +321,16 @@
     <div class="üçgen3"></div>
     <div class="üçgen4"></div>
     </div>
+      </div>
     <div class="kare5">
        <div class="kare6"></div>
     <div class="kare7"></div>
     <div class="kare8"></div>
+<div><h1 class="W">W</h1>
+<div><h1 class="a">A</h1></div>  
+ <div><h1 class="s">S</h1></div> 
+ <div><h1 class="d">D</h1></div>
+</div>
     </div>
 <script>
 // =============== OYUN AYARLARI ===============
@@ -570,8 +577,4 @@ function startGame() {
 </script>
 </body>
 </html>
-
-
-
-
 
