@@ -2,273 +2,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="ilksitemlogo.png" type="image/png">
+    <link rel="icon" href="ilksitemlogo.png" type="image/png">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>health</title>
-<h1 class="W">W</h1>
-<h1 class="a">A</h1>
-<h1 class="s">S</h1>
-<h1 class="d">D</h1>
+
 
 <meta name="description" content="This is a reflex game, and your brain will focus on eight different places in this game. You will try to earn points by pressing the yellow square. You will have exactly 100 lives, and you will lose 25 lives for every square you press incorrectly. If you don't press anything for one second, you will lose 25 lives, so you will lose a total of four hearts.">
 
   
  <audio src="2doyunmuzıg3.mp3" loop ></audio> 
 
-
   
+
   <style>
-     body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 1s ease; /* 1 saniyede yumuşak geçiş */
-    }
-
-
-
-    .W{
-      position: fixed;
-      top: 140px;
-      left: 445px;
-      color: black;
-      font-size: 60px;
-      z-index: 1;
-    }
     
-    .a{
-      position: fixed;
-      top: 230px;
-      left: 350px;
-      color: black;
-      font-size: 70px;
-      z-index: 1;
-    }
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1s ease;
+    overflow: hidden;
+}
 
-    .s{
-      position: fixed;
-      top: 230px;
-      left: 453px;
-      color: black;
-      font-size: 70px;
-      z-index: 1;
-    }
-     
-    .d{
-      position: fixed;
-      top: 230px;
-      left: 555px;
-      color: black;
-      font-size: 70px;
-      z-index: 1;
-    }
+/* W, A, S, D harfleri için vh/vw ayarları */
+.W {
+    position: relative;
+    top: -19vh; /* 140px / 1080px = ~0.13vh */
+    left: 6.8vw; /* 445px / 1920px = ~0.23vw */
+    color: black;
+    font-size: 4vw; /* 60px / 1920px = ~0.03vw */
+    z-index: 1;
+}
 
-    .health_box{
-      width: 300px;
-      height: 36px;
-      border: 8px solid black;
-      background-color: grey;
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
+.a {
+    position: absolute;
+    top: -7vh; /* 230px / 1080px = ~0.21vh */
+    left: 0.7vw; /* 350px / 1920px = ~0.18vw */
+    color: black;
+    font-size: 4.5vw; /* 70px / 1920px = ~0.036vw */
+    z-index: 1;
+}
 
-    }
-    .health_bar{
-      width: 100%;
-      height: 100%;
-      background-color: red;
-      transition: width 0.7s;
-    }
-    .health_bar2{
-       width: 289px;
-      height: 27px;
-      border: 6px solid darkred;
-      position: fixed;
-      bottom: 26px;
-      left: 28px;
-    }
-    .kare1{
-      width:80px; 
-      height: 80px;
-      background-color: orange;
-      border: solid 8px black;
-      position: relative;
-      top: -33px;
-      left: 257px; 
-      
-    }
+.s {
+    position: absolute;
+    top: -6.8vh;
+    left: 7.8vw; /* 453px / 1920px = ~0.24vw */
+    color: black;
+    font-size: 4.5vw;
+    z-index: 1;
+}
 
-    .kare2{
-       width: 80px; 
-      height: 80px;
-      background-color: orange;
-      border: solid 8px black;
-      position: absolute;
-      top: -8px;
-      left: 93px; 
-    }
+.d {
+    position: absolute;
+    top: -6.8vh;
+    left: 13.9vw; /* 555px / 1920px = ~0.29vw */
+    color: black;
+    font-size: 4.5vw;
+    z-index: 1;
+}
 
-    .kare3{ width: 80px; 
-      height: 80px;
-      background-color: orange;
-      border: solid 8px black;
-      position: absolute;
-      top: -8px;
-      left: 193px; }
-
-    .kare4{
-       width: 80px; 
-      height: 80px;
-      background-color: rgb(255, 170, 1);
-      border: solid 8px black;
-      position: absolute;
-      top: -110px;
-      left: 93px; 
-    }
-
-    .kare5{
-       width: 80px; 
-      height: 80px;
-      background-color: orange;
-      border: solid 8px black;
-      position: relative;
-      top: -33px;
-      left: -440px; 
-    }
-    .kare6{
-       width: 80px; 
-      height: 80px;
-      background-color: orange;
-      border: solid 8px black;
-      position: absolute;
-      top: -8px;
-      left: 93px; 
-    }
-    .kare7{
-       width: 80px; 
-      height: 80px;
-      background-color: orange;
-      border: solid 8px black;
-      position: absolute;
-      top: -8px;
-      left: 193px; 
-    }
-    .kare8{
-       width: 80px; 
-      height: 80px;
-      background-color: orange;
-      border: solid 8px black;
-      position: absolute;
-      top: -110px;
-      left: 93px; 
-    }
-
-    .ok1{
-      width: 17px; 
-      height: 45px;
-      background-color: black;
-     
-      position: absolute;
-      top: 200px; 
-      left: 1070px;
-    }
-
-    .ok2{
-      width: 17px; 
-      height: 45px;
-      background-color: black;
-     
-      position: absolute;
-      top: 84px; 
-      left: 0px;
-
-    }
-
-    .ok3{
-      width: 45px; 
-      height: 17px;
-      background-color: black;
-     
-      position: absolute;
-      top: 110px; 
-      left: -110px;
-
-    }
-
-    .ok4{
-      width: 45px; 
-      height: 17px;
-      background-color: black;
-     
-      position: absolute;
-      top: 110px; 
-      left: 75px;
-    }
-     .üçgen1{
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 30px solid rgb(0, 0, 0);
-      position: absolute;
-      top: 105px;
-      left: 110px;
-
-      transform: rotate(90deg); 
-      transform-origin: center;  
-    }
-
-     .üçgen2{
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 30px solid rgb(0, 0, 0);
-      position: absolute;
-      top: -20px;
-      left: -5px; 
-    }
-
-     .üçgen3{
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 30px solid rgb(0, 0, 0);
-      position: absolute;
-      top: 120px;
-      left: -5px; 
-
-      transform: rotate(180deg);
-      transform-origin: center;
-    }
-
-     .üçgen4{
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 30px solid rgb(0, 0, 0);
-      position: absolute;
-      top: 105px;
-      left: -130px;
-      
-      transform: rotate(-90deg);
-      transform-origin: center;
-    }
-
-    .highlight {
-      background-color: yellow;
-      transition: background-color 0.3s;
-    }
-
+/* Can barı için vh/vw ayarları */
+.health_box {
+    width: 19vw; 
+    height: 5.5vh; 
+    border: 0.5vw solid black; 
+    background-color: grey;
+    position: fixed;
+    bottom: 2vh;
+    left: 1vw; /* 20px / 1920px = ~0.01vw */
+  
+      }
     
-   
-  </style>
-  </head>
+
+.health_bar {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transition: width 0.7s;
+}
+
+.health_bar2 {
+    width: 18.4vw; /* 289px / 1920px = ~0.15vw */
+    height: 3.9vh; /* 27px / 1080px = ~0.025vh */
+    border: 0.4vw solid darkred; /* 6px / 1920px = ~0.003vw */
+    position: fixed;
+    bottom: 3vh; /* 26px / 1080px = ~0.024vh */
+    left: 1.4vw; /* 28px / 1920px = ~0.015vw */
+    
+}
+
+/* Kareler için vh/vw ayarları */
+.kare1 {
+    width: 5vw; /* 80px / 1920px = ~0.041vw */
+    height: 11vh; /* 80px / 1080px = ~0.074vh */
+    background-color: orange;
+    border: solid 0.6vw black;
+    position: relative;
+    top: -3vh; /* -33px / 1080px = ~-0.03vh */
+    left: 15vw; /* 257px / 1920px = ~0.133vw */
+}
+
+.kare2 {
+    width: 5vw;
+    height: 11vh;
+    background-color: orange;
+    border: solid 0.6vw black;
+    position: absolute;
+    top: -1.2vh; /* -8px / 1080px = ~-0.007vh */
+    left: 12.3vw; /* 93px / 1920px = ~0.048vw */
+}
+
+.kare3 {
+    width: 5vw;
+    height: 11vh;
+    background-color: orange;
+    border: solid 0.6vw black;
+    position: absolute;
+    top: -1.2vh;
+    left: 5.9vw; /* 193px / 1920px = ~0.1vw */
+}
+
+.kare4 {
+    width: 5vw;
+    height: 11vh;
+    background-color: rgb(255, 170, 1);
+    border: solid 0.6vw black;
+    position: absolute;
+    top: -15.3vh; /* -110px / 1080px = ~-0.1vh */
+    left: 5.9vw;
+}
+
+.kare5 {
+    width: 5vw;
+    height: 11vh;
+    background-color: orange;
+    border: solid 0.6vw black;
+    position: relative;
+    top: -3vh;
+    left: -30vw; /* -440px / 1920px = ~-0.23vw */
+}
+
+.kare6 {
+    width: 5vw;
+    height: 11vh;
+    background-color: orange;
+    border: solid 0.6vw black;
+    position: absolute;
+    top: -1vh;
+    left: 12.3vw;
+}
+
+.kare7 {
+    width: 5vw;
+    height: 11vh;
+    background-color: orange;
+    border: solid 0.6vw black;
+    position: absolute;
+    top: -1vh;
+    left: 5.9vw;
+}
+
+.kare8 {
+    width: 5vw;
+    height: 11vh;
+    background-color: orange;
+    border: solid 0.6vw black;
+    position: absolute;
+    top: -15.1vh;
+    left: 5.9vw;
+}
+
+/* Ok ve üçgenler için vh/vw ayarları */
+.ok1 {
+    width: 1.2vw; /* 17px / 1920px = ~0.009vw */
+    height: 6.5vh; /* 45px / 1080px = ~0.041vh */
+    background-color: black;
+    position: relative;
+    top: -10.3vh; /* 200px / 1080px = ~0.185vh */
+    left: 8.4vw; /* 1070px / 1920px = ~0.557vw */
+}
+
+.ok2 {
+    width: 1.2vw;
+    height: 6.5vh;
+    background-color: black;
+    position: absolute;
+    top: 11vh; /* 84px / 1080px = ~0.078vh */
+    left: 0vw;
+}
+
+.ok3 {
+    width: 3.2vw; /* 45px / 1920px = ~0.023vw */
+    height: 2.7vh; /* 17px / 1080px = ~0.015vh */
+    background-color: black;
+    position: absolute;
+    top: 14vh; /* 110px / 1080px = ~0.101vh */
+    left: -7vw; /* -110px / 1920px = ~-0.057vw */
+}
+
+.ok4 {
+    width: 3vw;
+    height: 2.6vh;
+    background-color: black;
+    position: absolute;
+    top: 14vh;
+    left: 4.8vw; /* 75px / 1920px = ~0.039vw */
+}
+
+.üçgen1 {
+    width: 0;
+    height: 0;
+    border-left: 1vw solid transparent; /* 15px / 1920px = ~0.008vw */
+    border-right: 1vw solid transparent;
+    border-bottom: 4vh solid black; /* 30px / 1080px = ~0.028vh */
+    position: absolute;
+    top: 13.3vh; /* 105px / 1080px = ~0.097vh */
+    left: 7.4vw; /* 110px / 1920px = ~0.057vw */
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.üçgen2 {
+    width: 0;
+    height: 0;
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    border-bottom: 4vh solid black;
+    position: absolute;
+    top: -2.9vh; /* -20px / 1080px = ~-0.018vh */
+    left: -0.4vw; /* -5px / 1920px = ~-0.002vw */
+}
+
+.üçgen3 {
+    width: 0;
+    height: 0;
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    border-bottom: 4vh solid black;
+    position: absolute;
+    top: 17vh; /* 120px / 1080px = ~0.111vh */
+    left: -0.4vw;
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+.üçgen4 {
+    width: 0;
+    height: 0;
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    border-bottom: 4vh solid black;
+    position: absolute;
+    top: 13.5vh;
+    left: -8.4vw; /* -130px / 1920px = ~-0.068vw */
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.highlight {
+    background-color: yellow;
+    transition: background-color 0.3s;
+}
+
+</style>
+</head>
+
 
   <button id="startBtn">START</button>
 <style>
@@ -276,8 +278,8 @@
       width: 200px;
       height: 80px;
         position: fixed;
-        top: 400px;
-        left: 673px;
+        top: 360px;
+        left: 655px;
         font-size: 55px;
         background-color: lightgrey;
     }
@@ -285,7 +287,7 @@
 <body>
  
 <div id="gameOver" style="display:none; position:fixed; top: 100px;
-        left: 627px; font-size:60px; text-align:center;">
+        left: 600px; font-size:60px; text-align:center;">
     <div> <h4>Game Over</h4></div>
     <button id="restartBtn" ><h1>TRY AGAİN</h1></button>
 
@@ -295,12 +297,13 @@
       height: 80px;
         position: fixed;
         top: 300px;
-        left: 673px;
+        left: 633px;
         font-size: 17px;
         background-color: lightgrey;
   }
 
 </style>
+
 </div>
 
  <div class="health_box">
@@ -311,7 +314,7 @@
       <div class="kare2"></div>
     <div class="kare3"></div>
     <div class="kare4"></div>
-     </div>
+    
     <div class="ok1">
       <div class="ok2"></div>
     <div class="ok3"></div> 
@@ -321,21 +324,27 @@
     <div class="üçgen3"></div>
     <div class="üçgen4"></div>
     </div>
+</div>
     <div class="kare5">
        <div class="kare6"></div>
     <div class="kare7"></div>
     <div class="kare8"></div>
+<h1 class="W">W
+<h1 class="a">A</h1>
+<h1 class="s">S</h1>
+<h1 class="d">D</h1>
+</h1>
     </div>
 <script>
 // =============== OYUN AYARLARI ===============
 const KEY_MAP = {
   kare1: "ArrowLeft",
-  kare2: "ArrowDown",
-  kare3: "ArrowRight",
+  kare2: "ArrowRight",
+  kare3: "ArrowDown",
   kare4: "ArrowUp",
   kare5: "a",
-  kare6: "s",
-  kare7: "d",
+  kare6: "d",
+  kare7: "s",
   kare8: "w",
 };
 
@@ -571,12 +580,3 @@ function startGame() {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
