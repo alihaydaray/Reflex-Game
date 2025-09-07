@@ -67,14 +67,16 @@ body {
 
 /* Can barı için vh/vw ayarları */
 .health_box {
-    width: 19vw; 
-    height: 5.5vh; 
+    width: 20%;
+    height: 6%; 
     border: 0.5vw solid black; 
     background-color: grey;
     position: absolute;
     bottom: 2vh;
     left: 1vw; /* 20px / 1920px = ~0.01vw */
-  
+  display: flex;
+  overflow: hidden;
+  align-items: center;
       }
     
 
@@ -83,16 +85,16 @@ body {
     height: 100%;
     background-color: red;
     transition: width 0.7s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .health_bar2 {
-    width: 97%;
-    height: 75%;
+     width: calc(100% - 0.7vw); 
+    height: calc(100% - 0.6vw); 
     border: solid 0.4vw darkred;
-    position: absolute;
-    top: 0;
-    left: 0;
-        
 }
 
 /* Kareler için vh/vw ayarları */
@@ -205,8 +207,8 @@ body {
 }
 
 .ok4 {
-    width: 3vw;
-    height: 2.6vh;
+    width: 3.2vw;
+    height: 2.7vh;
     background-color: black;
     position: absolute;
     top: 14vh;
@@ -214,8 +216,8 @@ body {
 }
 
 .üçgen1 {
-    width: 0;
-    height: 0;
+    width: 0vw;
+    height: 0vh;
     border-left: 1vw solid transparent; /* 15px / 1920px = ~0.008vw */
     border-right: 1vw solid transparent;
     border-bottom: 4vh solid black; /* 30px / 1080px = ~0.028vh */
@@ -227,8 +229,8 @@ body {
 }
 
 .üçgen2 {
-    width: 0;
-    height: 0;
+    width: 0vw;
+    height: 0vh;
     border-left: 1vw solid transparent;
     border-right: 1vw solid transparent;
     border-bottom: 4vh solid black;
@@ -238,8 +240,8 @@ body {
 }
 
 .üçgen3 {
-    width: 0;
-    height: 0;
+    width: 0vw;
+    height: 0vh;
     border-left: 1vw solid transparent;
     border-right: 1vw solid transparent;
     border-bottom: 4vh solid black;
@@ -251,8 +253,8 @@ body {
 }
 
 .üçgen4 {
-    width: 0;
-    height: 0;
+    width: 0vw;
+    height: 0vh;
     border-left: 1vw solid transparent;
     border-right: 1vw solid transparent;
     border-bottom: 4vh solid black;
@@ -307,9 +309,13 @@ body {
 </div>
 
  <div class="health_box">
-   <div class="health_bar"></div>
-   <div class="health_bar2"></div>
-   </div>
+  <div class="health_bar">
+    <div class="health_bar2"></div>
+  </div>
+</div>
+
+  
+
     <div class="kare1">
       <div class="kare2"></div>
     <div class="kare3"></div>
@@ -539,6 +545,31 @@ function restartGame() {
   gameStarted = true;
   randomParla();
   startTimer();
+}
+
+// =============== OYUN GİRİŞ KONTROLLERİ ===============
+function onKeyDown(e) {
+  if (!gameStarted || !currentKare) return;
+
+  const key = e.key;
+  const kareClass = currentKare.classList[0];
+  const correctKey = KEY_MAP[kareClass];
+
+  if (key === correctKey) {
+    lastCorrectTime = Date.now(); // Doğru tuşta sıfırlama
+    score += 1;
+
+    if (score > highScore) {
+      highScore = score;
+      saveHighScore();
+    }
+    updateScoreUI();
+    randomParla();
+  } else if (Object.values(KEY_MAP).includes(key)) {
+    // Yanlış tuşa basıldığında
+    applyPenalty(); // Canı düşür (-25)
+    lastCorrectTime = Date.now(); // Zamanlayıcıyı hemen sıfırla
+  }
 }
 
 // =============== BAŞLANGIÇ KURULUMU ===============
